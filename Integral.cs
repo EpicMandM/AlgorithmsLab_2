@@ -8,7 +8,7 @@ namespace AlgorithmsLab_2
 {
     static class Integral
     {
-        internal static double LeftSquare(Func<double, double> func, double a, double b, double n)
+        public static double LeftSquare(Func<double, double> func, double a, double b, double n)
         {
             double h = (b - a) / n;
             double sum = 0;
@@ -20,7 +20,7 @@ namespace AlgorithmsLab_2
 
         }
 
-        internal static double RightSquare(Func<double, double> func, double a, double b, double n)
+        public static double RightSquare(Func<double, double> func, double a, double b, double n)
         {
             double h = (b - a) / n;
             double sum = 0;
@@ -31,7 +31,7 @@ namespace AlgorithmsLab_2
             return h * sum;
         }
 
-        internal static double MiddleSquare(Func<double, double> func, double a, double b, double n)
+        public static double MiddleSquare(Func<double, double> func, double a, double b, double n)
         {
             double h = (b - a) / n;
             double sum = (func(a) + func(b)) /2;

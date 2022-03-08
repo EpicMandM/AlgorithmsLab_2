@@ -12,9 +12,9 @@ namespace AlgorithmsLab_2
     [TestFixture]
     class IntegralTest
     {
-        static Func<double, double> func = t => Math.Log10(t) / (1 - Math.Pow(t, 2));
+        static Func<double, double> func = t => t != 1 ? Math.Log(t) / (1 - Math.Pow(t, 2)) : 0;
         [Test]
-        static void LeftSquareTest()
+        public static void LeftSquareTest()
         {
             Assert.AreEqual(Integral.LeftSquare(func, 0.1, 0.1, 10e4), 0, 0.01);
             Assert.AreEqual(Integral.LeftSquare(func, 0.1, 0.2, 10e4), -0.1960, 0.01);
@@ -29,7 +29,7 @@ namespace AlgorithmsLab_2
 
         }
         [Test]
-        static void RightSquareTest()
+        public static void RightSquareTest()
         {
             Assert.AreEqual(Integral.RightSquare(func, 0.1, 0.1, 10e4), 0, 0.01);
             Assert.AreEqual(Integral.RightSquare(func, 0.1, 0.2, 10e4), -0.1960, 0.01);
@@ -43,7 +43,7 @@ namespace AlgorithmsLab_2
             Assert.AreEqual(Integral.RightSquare(func, 0.1, 1, 10e4), -0.9025, 0.01);
         }
         [Test]
-        static void MiddleSquareTest()
+        public static void MiddleSquareTest()
         {
             Assert.AreEqual(Integral.MiddleSquare(func, 0.1, 0.1, 10e4), 0, 0.01);
             Assert.AreEqual(Integral.MiddleSquare(func, 0.1, 0.2, 10e4), -0.1960, 0.01);
