@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Rhino.Mocks;
 using NUnit.Framework;
 
 
@@ -16,45 +11,48 @@ namespace AlgorithmsLab_2
         [Test]
         public static void LeftSquareTest()
         {
-            Assert.AreEqual(Integral.LeftSquare(func, 0.1, 0.1, 10e4), 0, 0.01);
-            Assert.AreEqual(Integral.LeftSquare(func, 0.1, 0.2, 10e4), -0.1960, 0.01);
-            Assert.AreEqual(Integral.LeftSquare(func, 0.1, 0.3, 10e4), -0.3446, 0.01);
-            Assert.AreEqual(Integral.LeftSquare(func, 0.1, 0.4, 10e4), -0.4646, 0.01);
-            Assert.AreEqual(Integral.LeftSquare(func, 0.1, 0.5, 10e4), -0.5649, 0.01);
-            Assert.AreEqual(Integral.LeftSquare(func, 0.1, 0.6, 10e4), -0.6507, 0.01);
-            Assert.AreEqual(Integral.LeftSquare(func, 0.1, 0.7, 10e4), -0.7254, 0.01);
-            Assert.AreEqual(Integral.LeftSquare(func, 0.1, 0.8, 10e4), -0.7912, 0.01);
-            Assert.AreEqual(Integral.LeftSquare(func, 0.1, 0.9, 10e4), -0.8499, 0.01);
-            Assert.AreEqual(Integral.LeftSquare(func, 0.1, 1, 10e4), -0.9025, 0.01);
+            IIntegral integral = new LeftIntegral();
+            Assert.AreEqual(integral.GetIntegral(func, 0.1, 0.1, 10e4), 0, 0.01);
+            Assert.AreEqual(integral.GetIntegral(func, 0.1, 0.2, 10e4), -0.1960, 0.01);
+            Assert.AreEqual(integral.GetIntegral(func, 0.1, 0.3, 10e4), -0.3446, 0.01);
+            Assert.AreEqual(integral.GetIntegral(func, 0.1, 0.4, 10e4), -0.4646, 0.01);
+            Assert.AreEqual(integral.GetIntegral(func, 0.1, 0.5, 10e4), -0.5649, 0.01);
+            Assert.AreEqual(integral.GetIntegral(func, 0.1, 0.6, 10e4), -0.6507, 0.01);
+            Assert.AreEqual(integral.GetIntegral(func, 0.1, 0.7, 10e4), -0.7254, 0.01);
+            Assert.AreEqual(integral.GetIntegral(func, 0.1, 0.8, 10e4), -0.7912, 0.01);
+            Assert.AreEqual(integral.GetIntegral(func, 0.1, 0.9, 10e4), -0.8499, 0.01);
+            Assert.AreEqual(integral.GetIntegral(func, 0.1, 1, 10e4), -0.9025, 0.01);
 
         }
         [Test]
         public static void RightSquareTest()
         {
-            Assert.AreEqual(Integral.RightSquare(func, 0.1, 0.1, 10e4), 0, 0.01);
-            Assert.AreEqual(Integral.RightSquare(func, 0.1, 0.2, 10e4), -0.1960, 0.01);
-            Assert.AreEqual(Integral.RightSquare(func, 0.1, 0.3, 10e4), -0.3446, 0.01);
-            Assert.AreEqual(Integral.RightSquare(func, 0.1, 0.4, 10e4), -0.4646, 0.01);
-            Assert.AreEqual(Integral.RightSquare(func, 0.1, 0.5, 10e4), -0.5649, 0.01);
-            Assert.AreEqual(Integral.RightSquare(func, 0.1, 0.6, 10e4), -0.6507, 0.01);
-            Assert.AreEqual(Integral.RightSquare(func, 0.1, 0.7, 10e4), -0.7254, 0.01);
-            Assert.AreEqual(Integral.RightSquare(func, 0.1, 0.8, 10e4), -0.7912, 0.01);
-            Assert.AreEqual(Integral.RightSquare(func, 0.1, 0.9, 10e4), -0.8499, 0.01);
-            Assert.AreEqual(Integral.RightSquare(func, 0.1, 1, 10e4), -0.9025, 0.01);
+            IIntegral integral = new RightIntegral();
+            Assert.AreEqual(integral.GetIntegral(func, 0.1, 0.1, 10e4), 0, 0.01);
+            Assert.AreEqual(integral.GetIntegral(func, 0.1, 0.2, 10e4), -0.1960, 0.01);
+            Assert.AreEqual(integral.GetIntegral(func, 0.1, 0.3, 10e4), -0.3446, 0.01);
+            Assert.AreEqual(integral.GetIntegral(func, 0.1, 0.4, 10e4), -0.4646, 0.01);
+            Assert.AreEqual(integral.GetIntegral(func, 0.1, 0.5, 10e4), -0.5649, 0.01);
+            Assert.AreEqual(integral.GetIntegral(func, 0.1, 0.6, 10e4), -0.6507, 0.01);
+            Assert.AreEqual(integral.GetIntegral(func, 0.1, 0.7, 10e4), -0.7254, 0.01);
+            Assert.AreEqual(integral.GetIntegral(func, 0.1, 0.8, 10e4), -0.7912, 0.01);
+            Assert.AreEqual(integral.GetIntegral(func, 0.1, 0.9, 10e4), -0.8499, 0.01);
+            Assert.AreEqual(integral.GetIntegral(func, 0.1, 1, 10e4), -0.9025, 0.01);
         }
         [Test]
         public static void MiddleSquareTest()
         {
-            Assert.AreEqual(Integral.MiddleSquare(func, 0.1, 0.1, 10e4), 0, 0.01);
-            Assert.AreEqual(Integral.MiddleSquare(func, 0.1, 0.2, 10e4), -0.1960, 0.01);
-            Assert.AreEqual(Integral.MiddleSquare(func, 0.1, 0.3, 10e4), -0.3446, 0.01);
-            Assert.AreEqual(Integral.MiddleSquare(func, 0.1, 0.4, 10e4), -0.4646, 0.01);
-            Assert.AreEqual(Integral.MiddleSquare(func, 0.1, 0.5, 10e4), -0.5649, 0.01);
-            Assert.AreEqual(Integral.MiddleSquare(func, 0.1, 0.6, 10e4), -0.6507, 0.01);
-            Assert.AreEqual(Integral.MiddleSquare(func, 0.1, 0.7, 10e4), -0.7254, 0.01);
-            Assert.AreEqual(Integral.MiddleSquare(func, 0.1, 0.8, 10e4), -0.7912, 0.01);
-            Assert.AreEqual(Integral.MiddleSquare(func, 0.1, 0.9, 10e4), -0.8499, 0.01);
-            Assert.AreEqual(Integral.MiddleSquare(func, 0.1, 1, 10e4), -0.9025, 0.01);
+            IIntegral integral = new MiddleIntegral();
+            Assert.AreEqual(integral.GetIntegral(func, 0.1, 0.1, 10e4), 0, 0.01);
+            Assert.AreEqual(integral.GetIntegral(func, 0.1, 0.2, 10e4), -0.1960, 0.01);
+            Assert.AreEqual(integral.GetIntegral(func, 0.1, 0.3, 10e4), -0.3446, 0.01);
+            Assert.AreEqual(integral.GetIntegral(func, 0.1, 0.4, 10e4), -0.4646, 0.01);
+            Assert.AreEqual(integral.GetIntegral(func, 0.1, 0.5, 10e4), -0.5649, 0.01);
+            Assert.AreEqual(integral.GetIntegral(func, 0.1, 0.6, 10e4), -0.6507, 0.01);
+            Assert.AreEqual(integral.GetIntegral(func, 0.1, 0.7, 10e4), -0.7254, 0.01);
+            Assert.AreEqual(integral.GetIntegral(func, 0.1, 0.8, 10e4), -0.7912, 0.01);
+            Assert.AreEqual(integral.GetIntegral(func, 0.1, 0.9, 10e4), -0.8499, 0.01);
+            Assert.AreEqual(integral.GetIntegral(func, 0.1, 1, 10e4), -0.9025, 0.01);
         }
 
     }
